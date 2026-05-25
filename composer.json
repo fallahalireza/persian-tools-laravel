@@ -1,0 +1,80 @@
+{
+    "name": "fallahalireza/persian-tools-laravel",
+    "description": "A powerful Laravel package for Persian text utilities, Iranian validation rules, banking tools, national identifiers, Jalali dates, and more.",
+
+    "keywords": [
+        "laravel",
+        "persian",
+        "iran",
+        "farsi",
+        "jalali",
+        "shamsi",
+        "validation",
+        "bank",
+        "iranian",
+        "national-code"
+    ],
+
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "Alireza Fallah",
+            "email": "falahalireza11@gmail.com"
+        }
+    ],
+
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/validation": "^11.0 || ^12.0 || ^13.0"
+    },
+
+    "require-dev": {
+        "laravel/pint": "^1.24",
+        "larastan/larastan": "^3.0",
+        "orchestra/testbench": "^9.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "phpunit/phpunit": "^12.0",
+        "spatie/ray": "^1.28"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "FallahAlireza\\PersianTools\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "FallahAlireza\\PersianTools\\Tests\\": "tests/"
+        }
+    },
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FallahAlireza\\PersianTools\\PersianToolsServiceProvider"
+            ]
+        }
+    },
+
+    "scripts": {
+        "test": "pest",
+        "format": "pint",
+        "analyse": "phpstan analyse",
+        "test-coverage": "pest --coverage"
+    },
+
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true,
+            "pestphp/pest-plugin": true
+        }
+    },
+
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
