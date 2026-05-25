@@ -26,8 +26,7 @@ class IranianBankAccountNumber extends BaseRule
     public function __construct(
         protected ?string $separator = null,
         protected bool $convertPersianNumbers = false,
-    ) {
-    }
+    ) {}
 
     /** @param array<int, string> $parameters */
     public static function fromParameters(array $parameters): static

@@ -14,7 +14,7 @@ class BankingRulesTest extends TestCase
     #[Test]
     public function it_validates_correct_bank_card(): void
     {
-        $rule = new IranianBankCardNumber();
+        $rule = new IranianBankCardNumber;
         // Luhn-valid cards with known Iranian BIN prefixes
         $this->assertTrue($rule->passes('field', '6037991234567895')); // Bank Melli
         $this->assertTrue($rule->passes('field', '6104331234567894')); // Bank Mellat
@@ -30,14 +30,14 @@ class BankingRulesTest extends TestCase
     #[Test]
     public function it_rejects_card_with_wrong_length(): void
     {
-        $rule = new IranianBankCardNumber();
+        $rule = new IranianBankCardNumber;
         $this->assertFalse($rule->passes('field', '603799123456789')); // 15 digits
     }
 
     #[Test]
     public function it_detects_bank_name_from_card(): void
     {
-        $rule = new IranianBankCardNumber();
+        $rule = new IranianBankCardNumber;
         $bank = $rule->detectBank('6037991234567895');
         $this->assertSame('بانک ملی ایران', $bank);
     }
@@ -45,7 +45,7 @@ class BankingRulesTest extends TestCase
     #[Test]
     public function it_returns_null_for_unknown_bank(): void
     {
-        $rule = new IranianBankCardNumber();
+        $rule = new IranianBankCardNumber;
         $this->assertNull($rule->detectBank('9999991234567890'));
     }
 
@@ -54,7 +54,7 @@ class BankingRulesTest extends TestCase
     #[Test]
     public function it_validates_correct_iban(): void
     {
-        $rule = new IranianIban();
+        $rule = new IranianIban;
         $this->assertTrue($rule->passes('field', 'IR820540102680020817909002'));
     }
 
@@ -68,7 +68,7 @@ class BankingRulesTest extends TestCase
     #[Test]
     public function it_rejects_iban_wrong_length(): void
     {
-        $rule = new IranianIban();
+        $rule = new IranianIban;
         $this->assertFalse($rule->passes('field', 'IR062960000000'));
     }
 

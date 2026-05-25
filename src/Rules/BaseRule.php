@@ -16,7 +16,7 @@ abstract class BaseRule implements ValidationRule
     public static function fromParameters(array $parameters): static
     {
         // @phpstan-ignore new.static
-        return new static();
+        return new static;
     }
 
     /**

@@ -19,8 +19,7 @@ class IranianMobile extends BaseRule
     public function __construct(
         protected MobileFormat $format = MobileFormat::All,
         protected bool $convertPersianNumbers = false,
-    ) {
-    }
+    ) {}
 
     /** @param array<int, string> $parameters */
     public static function fromParameters(array $parameters): static

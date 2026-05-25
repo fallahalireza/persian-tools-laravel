@@ -20,8 +20,7 @@ class IranianPhone extends BaseRule
         protected ?string $areaCodeSeparator = null,
         protected ?string $withCountryCodeFormat = null,
         protected bool $convertPersianNumbers = false,
-    ) {
-    }
+    ) {}
 
     /** @param array<int, string> $parameters */
     public static function fromParameters(array $parameters): static

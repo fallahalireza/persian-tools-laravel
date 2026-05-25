@@ -16,7 +16,7 @@ class PhoneRulesTest extends TestCase
     #[Test]
     public function it_validates_mobile_in_all_formats(): void
     {
-        $rule = new IranianMobile();
+        $rule = new IranianMobile;
 
         $this->assertTrue($rule->passes('f', '09123456789'));
         $this->assertTrue($rule->passes('f', '+989123456789'));
@@ -37,7 +37,7 @@ class PhoneRulesTest extends TestCase
     #[Test]
     public function it_rejects_invalid_mobile_prefix(): void
     {
-        $rule = new IranianMobile();
+        $rule = new IranianMobile;
         $this->assertFalse($rule->passes('f', '08123456789')); // 081 is not a mobile prefix
     }
 
@@ -53,7 +53,7 @@ class PhoneRulesTest extends TestCase
     #[Test]
     public function it_validates_phone_without_area_code(): void
     {
-        $rule = new IranianPhone();
+        $rule = new IranianPhone;
         $this->assertTrue($rule->passes('f', '12345678'));
         $this->assertFalse($rule->passes('f', '1234567')); // too short
     }
@@ -78,7 +78,7 @@ class PhoneRulesTest extends TestCase
     #[Test]
     public function it_validates_area_codes(): void
     {
-        $rule = new IranianPhoneAreaCode();
+        $rule = new IranianPhoneAreaCode;
         $this->assertTrue($rule->passes('f', '021'));
         $this->assertTrue($rule->passes('f', '031'));
         $this->assertFalse($rule->passes('f', '099'));

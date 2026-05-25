@@ -48,7 +48,7 @@ class PersianDateBetween extends PersianDate
 
         $valueInt = $this->dateToInt($dateValue);
         $startInt = $this->dateToInt($this->startDate);
-        $endInt   = $this->dateToInt($this->endDate);
+        $endInt = $this->dateToInt($this->endDate);
 
         return $valueInt > $startInt && $valueInt < $endInt;
     }

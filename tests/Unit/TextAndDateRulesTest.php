@@ -20,7 +20,7 @@ class TextAndDateRulesTest extends TestCase
     #[Test]
     public function it_validates_persian_alpha(): void
     {
-        $rule = new PersianAlpha();
+        $rule = new PersianAlpha;
         $this->assertTrue($rule->passes('f', 'سلام'));
         $this->assertTrue($rule->passes('f', 'علی‌رضا'));
         $this->assertFalse($rule->passes('f', 'Hello'));
@@ -30,7 +30,7 @@ class TextAndDateRulesTest extends TestCase
     #[Test]
     public function it_validates_persian_num(): void
     {
-        $rule = new PersianNum();
+        $rule = new PersianNum;
         $this->assertTrue($rule->passes('f', '۱۲۳۴۵'));
         $this->assertFalse($rule->passes('f', '12345'));
         $this->assertFalse($rule->passes('f', '۱۲abc'));
@@ -39,7 +39,7 @@ class TextAndDateRulesTest extends TestCase
     #[Test]
     public function it_validates_persian_not_accept(): void
     {
-        $rule = new PersianNotAccept();
+        $rule = new PersianNotAccept;
         $this->assertTrue($rule->passes('f', 'Hello 123'));
         $this->assertFalse($rule->passes('f', 'سلام'));
         $this->assertFalse($rule->passes('f', 'hello سلام'));
@@ -50,7 +50,7 @@ class TextAndDateRulesTest extends TestCase
     #[Test]
     public function it_validates_persian_date(): void
     {
-        $rule = new PersianDate();
+        $rule = new PersianDate;
         $this->assertTrue($rule->passes('f', '1403/01/01'));
         $this->assertTrue($rule->passes('f', '1402/06/31'));
         $this->assertFalse($rule->passes('f', '2024/03/20'));  // Gregorian
@@ -78,7 +78,7 @@ class TextAndDateRulesTest extends TestCase
     #[Test]
     public function it_validates_persian_month_names(): void
     {
-        $rule = new PersianMonth();
+        $rule = new PersianMonth;
         $this->assertTrue($rule->passes('f', 'فروردین'));
         $this->assertTrue($rule->passes('f', 'اسفند'));
         $this->assertFalse($rule->passes('f', 'January'));
@@ -88,7 +88,7 @@ class TextAndDateRulesTest extends TestCase
     #[Test]
     public function it_validates_persian_day_names(): void
     {
-        $rule = new PersianDay();
+        $rule = new PersianDay;
         $this->assertTrue($rule->passes('f', 'شنبه'));
         $this->assertTrue($rule->passes('f', 'جمعه'));
         $this->assertFalse($rule->passes('f', 'Saturday'));
@@ -99,7 +99,7 @@ class TextAndDateRulesTest extends TestCase
     #[Test]
     public function it_validates_iranian_license_plate(): void
     {
-        $rule = new IranianLicensePlate();
+        $rule = new IranianLicensePlate;
         $this->assertTrue($rule->passes('f', '12الف34567'));
         $this->assertFalse($rule->passes('f', 'ABCD1234'));
         $this->assertFalse($rule->passes('f', '123456'));
